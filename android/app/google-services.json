@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "961097230526",
+    "firebase_url": "https://flash-chat-aff20.firebaseio.com",
+    "project_id": "flash-chat-aff20",
+    "storage_bucket": "flash-chat-aff20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961097230526:android:0ad241b2f06bc15e70d6ef",
+        "android_client_info": {
+          "package_name": "com.blogspot.bnopenkitchen.flash_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961097230526-hlqsp8n3ekdtdf2l90g7e5t2jtl9etk2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa7TgyWLPGybkky3qlT4M8k1xdmYt8vBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961097230526-hlqsp8n3ekdtdf2l90g7e5t2jtl9etk2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

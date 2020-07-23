@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flash_chat/services/login_and_registration_screen.dart';
+import 'package:flash_chat/components/login_and_registration_screen.dart';
 
 AnimationController controller;
 
@@ -16,7 +16,8 @@ class _LoginScreenState extends State<LoginScreen>
     return Scaffold(
       backgroundColor: Colors.white,
       body: LoginAndRegistrationScreen(
-        screenName: 'Log In',
+        title: 'Log In',
+        color: Colors.blueAccent,
       ),
     );
   }

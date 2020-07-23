@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flash_chat/services/login_and_registration_screen.dart';
+import 'package:flash_chat/components/login_and_registration_screen.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static const String id = 'registration_screen';
@@ -13,7 +13,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: LoginAndRegistrationScreen(
-        screenName: 'Registration',
+        title: 'Registration',
+        color: Colors.lightBlue,
       ),
     );
   }
