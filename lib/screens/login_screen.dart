@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 
+AnimationController controller;
+
 class LoginScreen extends StatefulWidget {
   static const id = 'login_screen';
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends State<LoginScreen>
+    with SingleTickerProviderStateMixin {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
