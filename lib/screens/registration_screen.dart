@@ -1,5 +1,8 @@
+import 'package:flash_chat/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flash_chat/components/login_and_registration_screen.dart';
+import 'package:flash_chat/constants.dart';
+import 'package:flash_chat/components/rounded_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static const String id = 'registration_screen';
@@ -8,13 +11,72 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+  String email;
+  String password;
+  final _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: LoginAndRegistrationScreen(
-        title: 'Registration',
-        color: Colors.lightBlue,
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Hero(
+              tag: 'logo',
+              child: Container(
+                height: 120.0,
+                child: Image.asset('images/logo.png'),
+              ),
+            ),
+            SizedBox(
+              height: 48.0,
+            ),
+            TextField(
+              onChanged: (value) {
+                email = value;
+              },
+              decoration: kTextFieldDecoration.copyWith(
+                hintText: "Enter your email.",
+              ),
+            ),
+            SizedBox(
+              height: 8.0,
+            ),
+            TextField(
+              onChanged: (value) {
+                password = value;
+              },
+              decoration: kTextFieldDecoration.copyWith(
+                hintText: "Enter your password.",
+              ),
+            ),
+            SizedBox(
+              height: 24.0,
+            ),
+            RoundedButton(
+              color: Colors.blue,
+              onPressed: () async {
+                final newUser = await _auth.createUserWithEmailAndPassword(
+                  email: email,
+                  password: password,
+                );
+                try {
+                  if (newUser != null) {
+                    Navigator.pushNamed(context, ChatScreen.id);
+                  }
+                } catch (e) {
+                  print(e);
+                }
+                print('$email and $password');
+              },
+              title: 'Registration',
+            ),
+          ],
+        ),
       ),
     );
   }

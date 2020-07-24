@@ -32,7 +32,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
 
     controller.addListener(() {
       setState(() {});
-      print(animation.value);
     });
   }
 
@@ -66,7 +65,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   text: ['Flash Chat'],
                   textStyle: TextStyle(
                     color: Colors.blueGrey,
-                    fontSize: 45.0,
+                    fontSize: 40.0,
                     fontWeight: FontWeight.w900,
                   ),
 
