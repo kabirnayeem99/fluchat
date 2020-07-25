@@ -24,7 +24,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     );
 
     animation = ColorTween(
-      begin: Colors.lightBlue,
+      begin: Colors.purple,
       end: Colors.white,
     ).animate(controller);
 
@@ -45,61 +45,65 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: animation.value,
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                Hero(
-                  tag: 'logo',
-                  child: Container(
-                    child: Image.asset('images/logo.png'),
-                    height: 60.0,
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Flexible(
+                    child: Hero(
+                      tag: 'logo',
+                      child: Container(
+                        child: Image.asset('images/logo.png'),
+                        height: 60.0,
+                      ),
+                    ),
                   ),
-                ),
-                TypewriterAnimatedTextKit(
-                  onTap: () => {},
-                  text: ['Flash Chat'],
-                  textStyle: TextStyle(
-                    color: Colors.blueGrey,
-                    fontSize: 40.0,
-                    fontWeight: FontWeight.w900,
-                  ),
+                  TypewriterAnimatedTextKit(
+                    onTap: () => {},
+                    text: ['Flash Chat'],
+                    textStyle: TextStyle(
+                      color: Colors.deepPurple,
+                      fontSize: 40.0,
+                      fontWeight: FontWeight.w900,
+                    ),
 
-                  // textAlign: TextAlign.start,
-                  // alignment: AlignmentDirectional.topStart,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 48.0,
-            ),
-            new RoundedButton(
-              title: "Log In",
-              color: Colors.blueAccent,
-              onPressed: () {
-                //Go to login screen.
-                Navigator.pushNamed(
-                  context,
-                  LoginScreen.id,
-                );
-              },
-            ),
-            new RoundedButton(
-              title: "Registration",
-              onPressed: () {
-                //Go to login screen.
-                Navigator.pushNamed(
-                  context,
-                  RegistrationScreen.id,
-                );
-              },
-              color: Colors.lightBlue,
-            ),
-          ],
+                    // textAlign: TextAlign.start,
+                    // alignment: AlignmentDirectional.topStart,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 48.0,
+              ),
+              new RoundedButton(
+                title: "Log In",
+                color: Colors.deepPurpleAccent,
+                onPressed: () {
+                  //Go to login screen.
+                  Navigator.pushNamed(
+                    context,
+                    LoginScreen.id,
+                  );
+                },
+              ),
+              new RoundedButton(
+                title: "Registration",
+                onPressed: () {
+                  //Go to login screen.
+                  Navigator.pushNamed(
+                    context,
+                    RegistrationScreen.id,
+                  );
+                },
+                color: Colors.purple,
+              ),
+            ],
+          ),
         ),
       ),
     );
